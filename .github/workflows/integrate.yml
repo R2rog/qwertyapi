@@ -27,7 +27,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      env:
 
       # Run Linter against code base #
     - name: Lint Code Base
