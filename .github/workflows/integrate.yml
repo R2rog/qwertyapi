@@ -9,11 +9,6 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
-  APP_MONGO_USER: test
-  APP_MONGO_PASS: password
-  APP_MONGO_DB: test
-
 jobs:
   build:
   
@@ -22,7 +17,6 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        mongodb-version: [4.2]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -41,12 +35,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.7.0
-      with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-
+        
     - run: npm ci
     - run: npm test
       env: 
