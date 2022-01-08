@@ -34,10 +34,12 @@ describe("POST SESSIONS", () => {
 });
 
 //Deleting the test document from the collection
-after(async () => {
+after(async (done) => {
     try {
       await sessionModel.deleteOne({ prod_id: 'testid' });
+      done();
     } catch (err) {
       console.error(err);
+      done(err);
     }
 });
