@@ -19,21 +19,6 @@ jobs:
   
     runs-on: ubuntu-latest
 
-    services:
-      mongodb:
-        image: mongo
-        env:
-          MONGO_INITDB_ROOT_USERNAME: test
-          MONGO_INITDB_ROOT_PASSWORD: password
-          MONGO_INITDB_DATABASE: test
-        options: >-
-          --health-cmd mongo
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 27017:27017
-
     strategy:
       matrix:
         node-version: [16.x]
@@ -43,7 +28,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       env:
-        MONGODB_URI_TEST: ${{ secrets.MONGODB_URI_TEST }}
 
       # Run Linter against code base #
     - name: Lint Code Base
@@ -51,6 +35,7 @@ jobs:
       env:
         VALIDATE_ALL_CODEBASE: false
         DEFAULT_BRANCH: main
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
@@ -64,5 +49,6 @@ jobs:
         mongodb-version: ${{ matrix.mongodb-version }}
 
     - run: npm ci
-
     - run: npm test
+      env: 
+        MONGODB_URI_TEST: ${{ secrets.MONGODB_URI_TEST }} 
