@@ -19,7 +19,7 @@ mongoose
 .then(() => {
     console.log('Connected to Mongodb atlas');
     app.listen(port, () => {
-        console.log('Server running *.* ...');
+        console.log('Server running o(^▽^)o ');
     });
 }).catch((error) => {
         console.error(error);
@@ -31,7 +31,7 @@ app.use('/api',sessionRoutes);
 
 //Routes
 app.get('/', (req, res) => {
-    res.send('Welcome to the api')
+    res.send('Welcome to the api o(^▽^)o')
 });
 
 module.exports = app;
