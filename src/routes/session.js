@@ -6,6 +6,7 @@ const router = express.Router();
 //create session
 router.post("/session",(req,res)=>{
     const session = sessionSchema(req.body);
+    console.log('session = ', session);
     session.save()
     .then((data)=> { 
         res.status(200).json({success: true, dataCreated: data});

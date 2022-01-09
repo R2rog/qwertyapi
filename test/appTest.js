@@ -16,21 +16,23 @@ const session = {
 };
 
 //Giving time to connect to the data base. 
-before(function (done) {
-    this.timeout(30000);
+before((done)=>{
+    this.timeout(10000);
     setTimeout(done, 2000);
 });
 
 describe("POST SESSIONS", () => {
     it('Should return success true:', (done) =>{
-        request(app)
-        .post("/api/session")
-        .send(session)
-        .then((res)=>{
-            expect(res.body.success).to.be.equal(true);
-            done();
-        })
-        .catch((err)=> done(err));
+        setTimeout(()=>{
+            request(app)
+            .post("/api/session")
+            .send(session)
+            .then((res)=>{
+                expect(res.body.success).to.be.equal(true);
+                done();
+            })
+            .catch((err)=> done(err));
+        }, 20000);
     });
 });
 
