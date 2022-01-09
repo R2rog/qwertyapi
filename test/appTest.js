@@ -26,7 +26,6 @@ describe("POST SESSIONS", () => {
         request(app)
         .post("/api/session")
         .send(session)
-        .expect(200)
         .then((res)=>{
             expect(res.body.success).to.be.equal(true);
             done();
