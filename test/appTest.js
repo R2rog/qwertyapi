@@ -8,7 +8,7 @@ dotenv.config();
 
 //Giving time to connect to the data base. 
 before(function (done) {
-    this.timeout(20000);
+    this.timeout(30000);
     setTimeout(done, 2000);
 });
 
