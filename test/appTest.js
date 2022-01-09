@@ -15,11 +15,11 @@ const session = {
     first: 0
 };
 
-//Giving time to connect to the data base. 
+/*Giving time to connect to the data base. 
 before((done)=>{
     this.timeout(10000);
     setTimeout(done, 2000);
-});
+});*/
 
 describe("POST SESSIONS", () => {
     it('Should return success true:', (done) =>{
@@ -36,11 +36,11 @@ describe("POST SESSIONS", () => {
     });
 });
 
-//Deleting the test document from the collection
+/*Deleting the test document from the collection
 after(async () => {
     try {
       await sessionModel.deleteOne({ prod_id: 'testid' });
     } catch (err) {
       console.error(err);
     }
-});
+});*/
