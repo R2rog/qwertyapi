@@ -6,6 +6,15 @@ const sessionModel = require('../src/models/session');
 
 dotenv.config();
 
+const session = {
+    prod_id: 'testid',
+    date: new Date().toISOString(),
+    location: "AQ",
+    os: 'linux',
+    length: 100,
+    first: 0
+};
+
 //Giving time to connect to the data base. 
 before(function (done) {
     this.timeout(30000);
@@ -16,14 +25,7 @@ describe("POST SESSIONS", () => {
     it('Should return success true:', (done) =>{
         request(app)
         .post("/api/session")
-        .send({
-            prod_id: 'testid',
-            date: new Date().toISOString(),
-            location: "AQ",
-            os: 'linux',
-            length: 100,
-            first: 0
-        })
+        .send(session)
         .expect(200)
         .then((res)=>{
             expect(res.body.success).to.be.equal(true);
