@@ -27,11 +27,9 @@ describe("POST SESSIONS", () => {
             request(app)
             .post("/api/session")
             .send(session)
-            .then((res)=>{
-                expect(res.body.success).to.be.equal(true);
-                done();
-            })
+            .then((res)=>{ expect(res.body.success).to.be.equal(true);})
             .catch((err)=> done(err));
+            done();
         }, 20000);
     });
 });
