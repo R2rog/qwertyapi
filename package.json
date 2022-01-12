@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "NODE_ENV=testing mocha --recursive --exit --timeout 30000"
+    "start": "NODE_ENV=production node app.js",
+    "dev": "NODE_ENV=development nodemon app.js",
+    "test": "NODE_ENV=testing jest --verbose --silent"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +17,7 @@
     "mongoose": "^6.1.2"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^9.1.3",
+    "jest": "^27.4.7",
     "nodemon": "^2.0.15",
     "supertest": "^6.1.6"
   }
