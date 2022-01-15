@@ -18,7 +18,7 @@ const session = {
 
 test('Posting sessions should return success true:', async ()=>{
     await api
-    .post("/api/session")
+    .post("/new")
     .send(session)
     .then((res)=>{ expect(res.body.success).to.be.equal(true);})
     .catch((err)=> console.error(err));
