@@ -3,11 +3,11 @@ require('dotenv').config();
 
 let db;
 
-if(process.env.NODE_ENV === "testing") {
+if(process.env.NODE_ENV === "testing"||process.env.NODE_ENV === "development") {
     db = process.env.MONGODB_URI_TEST;
 }else{
     db = process.env.MONGODB_URI
-}
+};
 
 //MongoDB Atlas connection
 mongoose

@@ -8,10 +8,10 @@ const port = process.env.PORT || 8080;
 
 //Middleware
 app.use(express.json());
-app.use('/session',sessionRoutes);
+app.use('/sessions',sessionRoutes);
 
 //Routes
-app.get('/', (req, res) => {
+app.get('/', (req,res) => {
     res.send('Welcome to the api o(^▽^)o')
 });
 
