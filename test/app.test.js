@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import supertest from ('supertest');
+import supertest from 'supertest';
 import dotenv from 'dotenv';
-import {app, server} from ('../app.js');
+import {app, server} from '../app.js';
 import sessionModel from '../src/models/session.js';
 
 const api = supertest(app);
