@@ -1,5 +1,5 @@
-const express = require('express');
-const sessionSchema = require('../models/session');
+import express from 'express';
+import sessionSchema from '../models/session.js';
 
 const router = express.Router();
 
@@ -32,4 +32,4 @@ router.delete("/delete/:id", async (req, res) => {
     res.send(result);
 });
 
-module.exports = router;
+export default router;

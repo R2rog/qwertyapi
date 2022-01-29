@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const sessionSchema = mongoose.Schema({
     prod_id:{
@@ -12,4 +12,4 @@ const sessionSchema = mongoose.Schema({
     first: Boolean
 });
 
-module.exports = mongoose.model('Session', sessionSchema);
+export default mongoose.model('Session', sessionSchema);

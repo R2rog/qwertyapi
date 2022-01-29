@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "dev": "NODE_ENV=development nodemon app.js",
+    "gulp": "gulp",
     "test": "NODE_ENV=testing jest --verbose --silent"
   },
   "keywords": [],
@@ -17,6 +19,14 @@
     "mongoose": "^6.1.2"
   },
   "devDependencies": {
+    "cssnano": "^5.0.16",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
     "jest": "^27.4.7",
     "nodemon": "^2.0.15",
     "supertest": "^6.1.6"
