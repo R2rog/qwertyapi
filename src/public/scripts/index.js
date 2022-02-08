@@ -9,9 +9,9 @@ btn.addEventListener("click", (e) => {
   let url = "";
   modal.style.display = "block";
   downloads += 1;
-  if (navigator.appVersion.indexOf('Win') != -1) url = "https://github.com/R2rog/qwertyapp/releases/download/v1.0.2/qwerty-Setup-1.0.2.exe";
-  else if (navigator.appVersion.indexOf('Mac')!= -1) url = "https://github.com/R2rog/qwertyapp/releases/download/v1.0.2/qwerty-1.0.2.dmg";
-  else url = "https://github.com/R2rog/qwertyapp/releases/download/v1.0.2/qwerty_1.0.2_amd64.deb";
+  if (navigator.appVersion.indexOf('Win') != -1) url = "https://github.com/R2rog/qwertyapp/releases/download/v1.0.4/qwerty-Setup-1.0.4.exe";
+  else if (navigator.appVersion.indexOf('Mac')!= -1) url = "https://github.com/R2rog/qwertyapp/releases/download/v1.0.4/qwerty-1.0.4.dmg";
+  else url = "https://github.com/R2rog/qwertyapp/releases/download/v1.0.4/qwerty_1.0.4_amd64.deb";
   acceptTerms.setAttribute('href', url);
 });
 

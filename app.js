@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use('/sessions',sessionRoutes);
 app.use(express.static('./dist'));
-
+//app.use(express.static('./src/public'));
 //Routes
 app.get('/', (req,res) => {
     console.log('Welcome to the qwertysite');
